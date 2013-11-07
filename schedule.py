@@ -13,13 +13,16 @@ def schedule(url, teamname):
 
     soup = Soup(html)
 
-    tables = soup.find("table")
+    tables = soup.find_all("table")
     
     for i in tables:
-        
-        if i.find('tbody').find_all('tr'):
-            searchtable = i.find('tbody').find_all('tr')
+        print "new Table"
+        print "\n"
+        print i.find('tbody')
+        #if i.find('tbody').find_all('tr') < 0:
+         #   searchtable = i.find('tbody').find_all('tr')
 
+    return
     upcoming = []
 
     for row in searchtable:
