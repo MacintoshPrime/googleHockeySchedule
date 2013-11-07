@@ -1,6 +1,7 @@
 from bs4 import BeautifulSoup as Soup
 import urllib2
 
+#testing update
 def schedule(url, teamname):
     '''
     Takes an url and a teamname.
