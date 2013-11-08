@@ -7,6 +7,5 @@ Works great on basic webpages with a simple table.
 
 To be added.
 
-Deal with page with many tables. ie NHL.com
 Export data to google Calendar.
 
