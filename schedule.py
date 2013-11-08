@@ -8,18 +8,19 @@ def nhl(cells):
     date = cells[0].get_text()
     team1 = cells[1].get_text()
     team2 = cells[2].get_text()
-    return [date + ' ' + team1 + ' vs ' + team2]
+    return '<tr><td>'+date+'</td><td>' + team1 + '</td><td>' + team2+'</td></tr>'
 	
 def other(cells):
     '''
     Assume cell order is date/time/location/teamname/teamname
     '''
-    date = cells[0].get_text()
+    date = cells[0].get_text().replace('xa0', ',')
     time = cells[1].get_text()
     location = cells[2].get_text()
     team1 = cells[3].get_text()
     team2 = cells[4].get_text()
-    return [date + ' ' + time + ' ' + location + ' ' + team1 + ' vs ' + team2]
+    return '<tr><td>'+date+'</td><td>'+time + '</td><td>' + location + '</td><td>' + team1 + '</td><td>' + team2+'</td></tr>'
+
 
 #testing update
 def schedule(url, teamname):
@@ -47,7 +48,7 @@ def schedule(url, teamname):
                 cells = x.find_all('td')
                 for matches in cells:
                     #print 'new: ' + matches.get_text()
-                    if teamname in matches.get_text():
+                    if teamname.lower() in matches.get_text().lower():
                         
                         #if url contain nhl use the nhl parser
                         if 'nhl' in url:
