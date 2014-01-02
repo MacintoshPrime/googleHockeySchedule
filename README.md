@@ -8,8 +8,3 @@ Works great on basic webpages with a simple table.
 To be added.
 
 Export data to google Calendar.
-
-#Test
-- [ ] hi
-- [ ] hello
-- [x] for an empty checkbox
